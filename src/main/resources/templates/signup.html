@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://thymeleaf.org">
+<!--<head th:replace="common/header :: navbar" />-->
+<head>
+    <title>Register</title>
+    <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<div class="container">
+    <fieldset>
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h2>Signup form</h2>
+                    <hr />
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="main-login main-center">
+                <form class="form-horizontal" method="post" th:action="@{/process_register}">
+
+                    <div class="form-group">
+                        <label for="firstName" class="cols-sm-2 control-label">User Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" th:value="${user.username}" id="firstName" name="username" roleId="firstname"  placeholder="Enter your username" required="required"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+<!--                    <div class="form-group">-->
+<!--                        <label for="phone" class="cols-sm-2 control-label">Phone</label>-->
+<!--                        <div class="cols-sm-10">-->
+<!--                            <div class="input-group">-->
+<!--                                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>-->
+<!--                                <input type="text" class="form-control" th:value="${user.phone}" id="phone" name="phone" roleId="phone"  placeholder="xxx-xxx-xxxx" required="required"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <label for="email" class="cols-sm-2 control-label">Your Email</label><span class="bg-danger pull-right" th:if="${emailExists}">Email already exists</span>-->
+<!--                        <div class="cols-sm-10">-->
+<!--                            <div class="input-group">-->
+<!--                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>-->
+<!--                                <input type="text" class="form-control" th:value="${user.email}" id="email" name="email" roleId="email"  placeholder="Enter your Email" required="required"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+                    <div class="form-group">
+                        <label for="password" class="cols-sm-2 control-label">Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password" class="form-control" th:value="${user.password}" id="password" name="password" roleId="password"  placeholder="Enter your Password" required="required"/>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input id="showPassword" type="checkbox" />Show Password
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Sign up!</button>
+                    </div>
+
+                    <hr />
+
+                    <div class="form-group ">
+                        <a  class="btn btn-info btn-lg btn-block login-button" th:href="@{/}">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </fieldset>
+</div>
+</body>
+</html>
